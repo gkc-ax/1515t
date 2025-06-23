@@ -1,0 +1,156 @@
+{
+  "Version": 2,
+  "IoAddresses": [
+    {
+      "Ref": "ET200SP/AI1",
+      "Submodules": [
+        {
+          "Name": "AI 4xI 2-wire 4..20mA HART V1.0",
+          "HardwareIdentifier": 268,
+          "Inputs": {
+            "StartAddress": "1.0",
+            "EndAddress": "8.7",
+            "Length": 64,
+            "Source": "AutoAssigned",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 16,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 32,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 48,
+                "Length": 16
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "ET200SP/DI1",
+      "Submodules": [
+        {
+          "Name": "DI 8x24VDC HS V1.0",
+          "HardwareIdentifier": 265,
+          "Inputs": {
+            "StartAddress": "0.0",
+            "EndAddress": "0.7",
+            "Length": 8,
+            "Source": "UserDefined",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 1,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 2,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 3,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_4",
+                "Offset": 4,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_5",
+                "Offset": 5,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_6",
+                "Offset": 6,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_7",
+                "Offset": 7,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "ET200SP/DQ1",
+      "Submodules": [
+        {
+          "Name": "DQ 8x24VDC/0.5A HF V2.0",
+          "HardwareIdentifier": 264,
+          "Outputs": {
+            "StartAddress": "2.0",
+            "EndAddress": "2.7",
+            "Length": 8,
+            "Source": "UserDefined",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 1,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 2,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 3,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_4",
+                "Offset": 4,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_5",
+                "Offset": 5,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_6",
+                "Offset": 6,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_7",
+                "Offset": 7,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+Devices:
+  - Name: ET200SP
+    Modules:
+      - Name: InterfaceModule
+        TypeIdentifier:
+          FileName: GSDML-V2.45-Siemens-ET200SP-20241202.XML
+          GsdId: DIM BA V3.2
+        Ports:
+          - Name: Port1
+            Label: X1 P1
+          - Name: Port2
+            Label: X1 P2
+        Interfaces:
+          - Label: X1
+            Name: PROFINET_interface_1
+            Addresses:
+              Configured:
+                - IPv4: 192.168.200.215/24
+                - ProfinetDeviceName: ET200SP
+      - Name: DI1
+        TypeIdentifier:
+          GsdId: DI 8x24VDC HS #This value can be easily found via. 'get-supported-devices' command.
+          FileName: GSDML-V2.45-Siemens-ET200SP-20241202.XML
+        IoConfiguration:
+          InputAddress: "0"
+        Parameters:
+          RecordDataList:
+            - Index: 243
+              RawValue: "0x01000000" #Light base module
+      - Name: DQ1
+        TypeIdentifier:
+          GsdId: DQ 8x24VDC/0,5A HF V2.0
+          FileName: GSDML-V2.45-Siemens-ET200SP-20241202.XML
+        IoConfiguration:
+          OutputAddress: "2"
+        Parameters:
+          RecordDataList:
+            - Index: 243
+              RawValue: "0x00000000" #Dark base module      
+      - Name: AI1
+        TypeIdentifier:
+          GsdId: AI 4xI 2-wire 4...20mA, HART
+          FileName: GSDML-V2.45-Siemens-ET200SP-20241202.XML
+        # IoConfiguration:
+        #   OutputAddress: "2"
+        Parameters:
+          RecordDataList:
+            - Index: 243
+              RawValue: "0x00000000" #Dark base module
+      - Name: ServerModule
+        TypeIdentifier:
+          GsdId: Servermodule_without_io
+          FileName: GSDML-V2.45-Siemens-ET200SP-20241202.XML
+      
+
+IoSystems:
+  - Name: IoSystem
+    ControllerInterfaces:
+      - Ref: CPU/PLC_1/PROFINET_interface_1
+    DeviceInterfaces:
+      - Ref: ET200SP/InterfaceModule/PROFINET_interface_1
+        Parameters:
+          PnWatchdogFactor: 3
+
+# PortInterconnections:
+#   - Ports:
+#       - Ref: CPU/PLC_1/Port_1
+#       - Ref: ET200SP/InterfaceModule/Port1

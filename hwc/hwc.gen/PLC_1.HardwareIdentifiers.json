@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "HardwareIdentifiers": [
+    {
+      "Name": "CPU",
+      "Value": 32
+    },
+    {
+      "Name": "CPU~PLC_1",
+      "Value": 48
+    },
+    {
+      "Name": "CPU~PLC_1~CPU display_1",
+      "Value": 54
+    },
+    {
+      "Name": "CPU~PLC_1~Card reader/writer_1",
+      "Value": 51
+    },
+    {
+      "Name": "CPU~PLC_1~DP interface_1",
+      "Value": 60
+    },
+    {
+      "Name": "CPU~PLC_1~OPC UA_1",
+      "Value": 117
+    },
+    {
+      "Name": "CPU~PLC_1~PROFINET_interface_1",
+      "Value": 64
+    },
+    {
+      "Name": "CPU~PLC_1~PROFINET_interface_1~Port_1",
+      "Value": 65
+    },
+    {
+      "Name": "CPU~PLC_1~PROFINET_interface_1~Port_2",
+      "Value": 66
+    },
+    {
+      "Name": "CPU~PLC_1~PROFINET_interface_2",
+      "Value": 72
+    },
+    {
+      "Name": "CPU~PLC_1~PROFINET_interface_2~Port_3",
+      "Value": 73
+    },
+    {
+      "Name": "CPU~PLC_1~Virtual_communication_interface",
+      "Value": 135
+    },
+    {
+      "Name": "CPU~Rail_0",
+      "Value": 267
+    },
+    {
+      "Name": "ET200SP",
+      "Value": 258
+    },
+    {
+      "Name": "ET200SP~AI1~AI 4xI 2-wire 4..20mA HART V1.0",
+      "Value": 268
+    },
+    {
+      "Name": "ET200SP~DI1~DI 8x24VDC HS V1.0",
+      "Value": 265
+    },
+    {
+      "Name": "ET200SP~DQ1~DQ 8x24VDC/0.5A HF V2.0",
+      "Value": 264
+    },
+    {
+      "Name": "ET200SP~InterfaceModule",
+      "Value": 262
+    },
+    {
+      "Name": "ET200SP~InterfaceModule~IM 155-6 PN BA V3.2",
+      "Value": 266
+    },
+    {
+      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1",
+      "Value": 257
+    },
+    {
+      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1~Port1",
+      "Value": 259
+    },
+    {
+      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1~Port2",
+      "Value": 260
+    },
+    {
+      "Name": "ET200SP~Rack",
+      "Value": 261
+    },
+    {
+      "Name": "ET200SP~ServerModule~Server module V1.1 (0 bytes)",
+      "Value": 263
+    },
+    {
+      "Name": "IoSystem",
+      "Value": 256
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+# General information
+name: "1513"
+version: 0.0.1
+type: app
+# Description for your application example or app
+description: <Description for your application example or app>
+# Targets to be compiled with 'apax build'
+targets:
+  - "1500"
+  - llvm
+# Dependencies
+devDependencies:
+  "@ax/sdk": ^2504
+  "@ax/dcp-utility": ^1.2.0
+  # "@ax/plc-control": ^1.3.1s
+  # "@ax/diag": ^1.1.2
+  "@ax-vscode/siemens.tracing-vscode": ^2.0.0
+  "@ax/st-ls": 10.0.85
+  "@ax/st-lang-contrib-library-toolbox": ^0.21.1
+  "@ax-vscode/ax.vscode-coverage-highlighter": ^1.1.890
+
+# Project variables
+variables:
+  APAX_BUILD_ARGS:
+    - --debug # Enable debug information for value debugging
+  GSD_FOLDER: ./hwc/gsd
+  # Folder where to find the compiled HW artifacts
+  HW_BIN_FOLDER: ./hwbin
+  # Folder where to find the compiled SW artifacts
+  SW_BIN_FOLDER: "./bin/1500"
+  # Choose your target RT, here : any S7-1500 PLC
+  # IP address must match with the IP address of your target device
+  # The IP address in the .vscode/launch.json must be equal  
+  IP_ADDRESS: "192.168.200.15"
+  AXUNIT_TARGET_IP: $IP_ADDRESS
+  # The master password, that protect the access to the hardware configuration on the plc
+  # Disclaimer: 
+  # Normally the password should not be in the code as a readable variable. This is only the case here as it is a simple example.
+  # Please use a password that is case sensitive (1 big and 1 small letter), a special character and a number.
+  MASTER_PW: "Siemens@1234"
+  # The locations of the certificate files
+  TLS_CONNECT_CERTFILE: ".ax/certificates/plc1.pem"
+  TLS_IMPORT_CERTFILE: "certificate/containerWithPublicAndPrivateKeys_x509.p12"
+  WEB_IMPORT_CERTFILE: "certificate/PlcCertificate.p12"
+  # The password for importing the certificate. 
+  # Disclaimer: 
+  # A passphrase should not be in the code as a readable variable. This is only the case here as it is a simple example.
+  CERT_PASSPHRASE: ""
+  # The name of the plc in the file myPLC.hwl.yml. 
+  # The name should be specified before creating the plc security file, as the files are assigned using the plc name.
+  PLC_NAME: "PLC_1"
+  # The default user name in the myPLC.hwl.yml file
+  USER_NAME: "User1"
+  # The password for the default user in the myPLC.hwl.yml file. A password should not be in the code as a readable variable. This is only the case here as it is a simple example.
+  USER_PASSWORD: "Siemens@123"
+  COMPARE_MODE: "all" # minimal  delta  all
+
+# Apax scripts
+scripts:
+  ############### Inital runs for PLC / PLC Name changes ###########################
+  # The bash function provide the easy creation of certificates via open ssl and then moves the certificate to the certificate folder. 
+  # In order to call the script, the access level must be authorized at the beginning.
+  create_certificate:
+    - chmod +x certificate/createCertificateViaOpenSSL.sh
+    - certificate/createCertificateViaOpenSSL.sh
+    - echo "set in the apax.yml the variable CERT_PASSPHRASE to the value that you insert as password of import of certificate"
+  # Creates the file for the security configuration for the PLC
+  hwc_setup_secure_communication: hwc setup-secure-communication --module-name $PLC_NAME --input hwc --master-password $MASTER_PW
+  # Imports the certificate for TLS (Transport Layer Security) communication in the project to the PLC
+  hwc_import_certificate: hwc import-certificate --module-name $PLC_NAME --input hwc --certificate $TLS_IMPORT_CERTFILE --purpose TLS --passphrase $CERT_PASSPHRASE
+  hwc_import_web_certificate: hwc import-certificate --module-name $PLC_NAME --input hwc --certificate $WEB_IMPORT_CERTFILE --purpose WebServer
+  hwc_import_OPC_certificate: hwc import-certificate --module-name $PLC_NAME --input hwc --certificate $WEB_IMPORT_CERTFILE --purpose OpcUaServer
+
+  # Creates the default user for the PLC
+  hwc_create_user: hwc manage-users --input hwc --module-name $PLC_NAME set-password --username $USER_NAME --password $USER_PASSWORD
+  ##################################################################################
+  # Compile the hardware description (input:sources) to target specific data (output:binaries) and update the IO- and HwIdent mapping (SystemConstants)
+  hw_compile: hwc compile --input hwc --output $HW_BIN_FOLDER
+  # load the target specific hardware data (binaries) to the PLC
+  hw_load: hwld load --input $HW_BIN_FOLDER/$PLC_NAME -t $IP_ADDRESS --accept-security-disclaimer -C $TLS_CONNECT_CERTFILE -M:$MASTER_PW --username $USER_NAME --password $USER_PASSWORD
+  # Call 'apax load' to download the builded program to the target. An 'apax build' might be required upfront
+  load: sld load --input $SW_BIN_FOLDER --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD
+  load_Anonymous: sld load --input $SW_BIN_FOLDER --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE -u "Anonymous" -p ""
+  delta_load: sld load -m delta --input $SW_BIN_FOLDER --target $IP_ADDRESS  --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD --accept-reinit-variables
+  # Call 'apax dlplc' to build and download the application to the target 
+  dlplc:
+    - apax build
+    - apax load
+  # Compiles the hardware and software and then loads it onto the PLC
+  compile_and_load_all:
+    - apax hw_compile
+    - apax hw_load
+    - apax dlplc
+
+  # manage-users list
+  list_user: hwc manage-users --input hwc --module-name $PLC_NAME list
+  compared: sld compare --mode $COMPARE_MODE --input $SW_BIN_FOLDER --target $IP_ADDRESS -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD --log debug
+  aaa:
+    - apax hwc_setup_secure_communication
+    - apax hwc_import_certificate
+    - apax hwc_import_web_certificate
+    - apax hwc_import_OPC_certificate
+    - apax hwc_create_user
+
+  # install gsd file
+  install_gsd: hwc install-gsd -i $GSD_FOLDER
+dependencies:
+  "@ax/simatic-1500-clocks": ^10.0.6
+  "@ax/simatic-1500-tasks": ^10.0.1
+  "@ax/system-fastmath": ^10.0.24
+  "@ax/system": ^10.0.24
+  "@gkc-ax/lib1": ^0.0.12
+
+registries:
+  "@gkc-ax": https://npm.pkg.github.com/

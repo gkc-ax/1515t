@@ -1,0 +1,21 @@
+{
+    // This is the configuration file for local debugging. This is not needed in a remote environment and can be deleted
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug live on PLC",
+            "type": "plc-debug",
+            "request": "launch",
+            "program": "${workspaceFolder}",
+            "ip": "192.168.200.15",
+            "certificate": "${workspaceFolder}/.ax/certificates/reference_x509.crt",
+            "username": "User1",
+            "password": "Siemens@123",
+            "plcId": "ab394e41-0e0b-4904-94fe-bb714dd29901"
+            
+        }
+    ]
+}

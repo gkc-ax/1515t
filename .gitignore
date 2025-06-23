@@ -1,0 +1,9 @@
+.apax
+.env
+bin
+hwbin
+obj
+testresult
+gsd
+sdCard
+trace-results

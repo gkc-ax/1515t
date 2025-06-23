@@ -1,0 +1,8 @@
+CONFIGURATION IoAddresses
+    VAR_GLOBAL
+        ET200SP_AI1_InputAddress AT %IL1: LWORD;
+        ET200SP_DI1_InputAddress AT %IB0: BYTE;
+        ET200SP_DQ1_OutputAddress AT %QB2: BYTE;
+
+    END_VAR
+END_CONFIGURATION
