@@ -4,7 +4,7 @@ bin
 hwbin
 obj
 testresult
-gsd/hwc/import-cache/**
+gsd/hwc/import-cache/GSDML-V2.45-Siemens-ET200MP-20241018/**
 !gsd/hwc/import-cache/GSDML-V2.45-Siemens-ET200SP-20241202/
 !**/hwc/gsd/
 sdCard
