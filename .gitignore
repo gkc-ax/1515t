@@ -4,7 +4,9 @@ bin
 hwbin
 obj
 testresult
-gsd
+gsd/hwc/import-cache/**
+!gsd/hwc/import-cache/GSDML-V2.45-Siemens-ET200SP-20241202/
 !**/hwc/gsd/
 sdCard
 trace-results
+
