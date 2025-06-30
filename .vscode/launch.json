@@ -6,7 +6,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug live on PLC",
+            "name": "Debug live via office",
+            "type": "plc-debug",
+            "request": "launch",
+            "program": "${workspaceFolder}",
+            "ip": "192.168.200.15",
+            "certificate": "${workspaceFolder}/.ax/certificates/reference_x509.crt",
+            "username": "User1",
+            "password": "Siemens@123",
+            "plcId": "cfa5c29c-024b-4d1e-91e4-6c313a308bf7"
+            
+        },
+        {
+            "name": "Debug live via ubuntu",
             "type": "plc-debug",
             "request": "launch",
             "program": "${workspaceFolder}",

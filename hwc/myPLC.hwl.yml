@@ -108,11 +108,11 @@ Devices:
       TimeOfDayStandardTimeStartMonth: 10
       TimeOfDayStandardTimeStartWeek: 5
       TimeOfDayStandardTimeStartWeekday: 1
-      # TimeSynchronizationServer1: ''
-      # TimeSynchronizationServer2: ''
-      # TimeSynchronizationServer3: ''
-      # TimeSynchronizationServer4: ''
-      # TimeSynchronizationUpdateInterval: 10
+      TimeSynchronizationServer1: '192.168.200.12'
+      TimeSynchronizationServer2: ''
+      TimeSynchronizationServer3: ''
+      TimeSynchronizationServer4: ''
+      TimeSynchronizationUpdateInterval: 10
       CentralAlarmManagement: True
       ProDiagUsedLicenses: 0
       OpcUaPurchasedLicense : 2
