@@ -1,9 +1,4 @@
-
-USING Siemens.Simatic.S71500.Clocks;
-USING System.DateTime;
 USING System.FastMath;
-USING gkc.Geometry;
-
 PROGRAM  MainProgram    
     VAR_EXTERNAL 
         ET200SP_DQ1_OutputAddress:BYTE;
