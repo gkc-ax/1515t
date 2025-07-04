@@ -6,8 +6,7 @@ PROGRAM  MainProgram
         count:LREAL ;
         AI1_CH0  : WORD;
         AI1_CH1  : WORD;
-        temperature: REAL;
-        result:int;     
+        temperature: REAL; 
     END_VAR
     ET200SP_DQ1_OutputAddress := ET200SP_DQ1_OutputAddress XOR BYTE#01 ;
     count := count + 0.01 ;

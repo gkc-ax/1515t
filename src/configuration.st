@@ -1,5 +1,3 @@
-USING Siemens.Simatic.S71500.Tasks;
-USING gkc.Geometry;
 
 CONFIGURATION MyConfiguration
     TASK Main(Priority := 1, INTERVAL:=t#100ms);
@@ -16,7 +14,6 @@ CONFIGURATION MyConfiguration
         AI1_CH1 AT %IW3: WORD;        
         count: LREAL:= 0.0;
         temperature: REAL;
-        result:int;  
     END_VAR
 END_CONFIGURATION
 
