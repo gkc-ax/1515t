@@ -95,7 +95,7 @@ scripts:
   # manage-users list
   list_user: hwc manage-users --input hwc --module-name $PLC_NAME list
   compared: sld compare --mode $COMPARE_MODE --input $SW_BIN_FOLDER --target $IP_ADDRESS -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD --log debug
-  aaa:
+  hw_prepare:
     - apax hwc_setup_secure_communication
     - apax hwc_import_certificate
     - apax hwc_import_web_certificate
