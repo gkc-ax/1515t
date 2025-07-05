@@ -3,6 +3,7 @@ CONFIGURATION MyConfiguration
     TASK Main(Priority := 1, INTERVAL:=t#100ms);
     
     PROGRAM P1 WITH Main: MainProgram;
+    //  Writable from HMI/OPC UA/Web API
     {S7.extern=ReadWrite}    
     {OpcUa.AccessLevel = ReadWrite}
     VAR_GLOBAL

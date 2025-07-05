@@ -18,11 +18,12 @@ devDependencies:
   "@ax/st-ls": 10.0.85
   "@ax/st-lang-contrib-library-toolbox": ^0.21.1
   "@ax-vscode/ax.vscode-coverage-highlighter": ^1.1.890
+  "@ax/hardware-diagnostics": ^0.3.0
 
 # Project variables
 variables:
   APAX_BUILD_ARGS:
-    - --debug # Enable debug information for value debugging
+    - "--debug" # Enable debug information for value debugging
   GSD_FOLDER: ./hwc/gsd
   # Folder where to find the compiled HW artifacts
   HW_BIN_FOLDER: ./hwbin
@@ -80,7 +81,6 @@ scripts:
   hw_load: hwld load --input $HW_BIN_FOLDER/$PLC_NAME -t $IP_ADDRESS --accept-security-disclaimer -C $TLS_CONNECT_CERTFILE -M:$MASTER_PW --username $USER_NAME --password $USER_PASSWORD
   # Call 'apax load' to download the builded program to the target. An 'apax build' might be required upfront
   load: sld load --input $SW_BIN_FOLDER --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD
-  load_Anonymous: sld load --input $SW_BIN_FOLDER --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE -u "Anonymous" -p ""
   delta_load: sld load -m delta --input $SW_BIN_FOLDER --target $IP_ADDRESS  --accept-security-disclaimer --log debug -C $TLS_CONNECT_CERTFILE --username $USER_NAME --password $USER_PASSWORD --accept-reinit-variables
   # Call 'apax dlplc' to build and download the application to the target 
   dlplc:
