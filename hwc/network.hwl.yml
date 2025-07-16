@@ -1,0 +1,21 @@
+IoSystems:
+  - Name: IoSystem
+    ControllerInterfaces:
+      - Ref: CenterStation/PLC_1/PROFINET_interface_1
+    DeviceInterfaces:
+      - Ref: et200sp_1/et200sp_1_interface/PROFINET_interface_1
+        Parameters:
+          PnWatchdogFactor: 3
+      - Ref: et200sp_2/et200sp_2_interface/PN-IO
+        Parameters:
+          PnWatchdogFactor: 3
+
+PortInterconnections:
+  - Ports:
+      - Ref: CenterStation/PLC_1/Port_1
+      - Ref: ET200SP_1/et200sp_1_interface/Port1
+  - Ports:
+      - Ref: ET200SP_1/et200sp_1_interface/Port2
+      - Ref: ET200SP_2/et200sp_2_interface/Port_1    
+
+

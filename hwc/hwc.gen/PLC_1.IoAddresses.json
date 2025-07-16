@@ -2,14 +2,14 @@
   "Version": 2,
   "IoAddresses": [
     {
-      "Ref": "ET200SP/AI1",
+      "Ref": "ET200SP_1/AI1",
       "Submodules": [
         {
           "Name": "AI 4xI 2-wire 4..20mA HART V1.0",
-          "HardwareIdentifier": 268,
+          "HardwareIdentifier": 274,
           "Inputs": {
-            "StartAddress": "1.0",
-            "EndAddress": "8.7",
+            "StartAddress": "28.0",
+            "EndAddress": "35.7",
             "Length": 64,
             "Source": "AutoAssigned",
             "SignalLayout": [
@@ -39,11 +39,11 @@
       ]
     },
     {
-      "Ref": "ET200SP/DI1",
+      "Ref": "ET200SP_1/DI1",
       "Submodules": [
         {
           "Name": "DI 8x24VDC HS V1.0",
-          "HardwareIdentifier": 265,
+          "HardwareIdentifier": 277,
           "Inputs": {
             "StartAddress": "0.0",
             "EndAddress": "0.7",
@@ -96,11 +96,11 @@
       ]
     },
     {
-      "Ref": "ET200SP/DQ1",
+      "Ref": "ET200SP_1/DQ1",
       "Submodules": [
         {
           "Name": "DQ 8x24VDC/0.5A HF V2.0",
-          "HardwareIdentifier": 264,
+          "HardwareIdentifier": 276,
           "Outputs": {
             "StartAddress": "2.0",
             "EndAddress": "2.7",
@@ -145,6 +145,177 @@
               {
                 "Name": "Signals_7",
                 "Offset": 7,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "ET200SP_2/AI1",
+      "Submodules": [
+        {
+          "Name": "AI 4xI 2-/4-wire ST V2.0 , QI",
+          "HardwareIdentifier": 266,
+          "Inputs": {
+            "StartAddress": "19.0",
+            "EndAddress": "27.7",
+            "Length": 72,
+            "Source": "AutoAssigned",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 16,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 32,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 48,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_4",
+                "Offset": 64,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_5",
+                "Offset": 65,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_6",
+                "Offset": 66,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_7",
+                "Offset": 67,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "ET200SP_2/AI2",
+      "Submodules": [
+        {
+          "Name": "AI 4xI 2-/4-wire ST V2.0 , QI",
+          "HardwareIdentifier": 265,
+          "Inputs": {
+            "StartAddress": "10.0",
+            "EndAddress": "18.7",
+            "Length": 72,
+            "Source": "AutoAssigned",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 16,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 32,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 48,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_4",
+                "Offset": 64,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_5",
+                "Offset": 65,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_6",
+                "Offset": 66,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_7",
+                "Offset": 67,
+                "Length": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Ref": "ET200SP_2/AI3",
+      "Submodules": [
+        {
+          "Name": "AI 4xI 2-/4-wire ST V2.0 , QI",
+          "HardwareIdentifier": 264,
+          "Inputs": {
+            "StartAddress": "1.0",
+            "EndAddress": "9.7",
+            "Length": 72,
+            "Source": "AutoAssigned",
+            "SignalLayout": [
+              {
+                "Name": "Signals_0",
+                "Offset": 0,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_1",
+                "Offset": 16,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_2",
+                "Offset": 32,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_3",
+                "Offset": 48,
+                "Length": 16
+              },
+              {
+                "Name": "Signals_4",
+                "Offset": 64,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_5",
+                "Offset": 65,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_6",
+                "Offset": 66,
+                "Length": 1
+              },
+              {
+                "Name": "Signals_7",
+                "Offset": 67,
                 "Length": 1
               }
             ]

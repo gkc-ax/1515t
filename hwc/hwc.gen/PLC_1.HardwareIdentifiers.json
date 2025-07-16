@@ -2,100 +2,144 @@
   "Version": 1,
   "HardwareIdentifiers": [
     {
-      "Name": "CPU",
+      "Name": "CenterStation",
       "Value": 32
     },
     {
-      "Name": "CPU~PLC_1",
+      "Name": "CenterStation~PLC_1",
       "Value": 48
     },
     {
-      "Name": "CPU~PLC_1~CPU display_1",
+      "Name": "CenterStation~PLC_1~CPU display_1",
       "Value": 54
     },
     {
-      "Name": "CPU~PLC_1~Card reader/writer_1",
+      "Name": "CenterStation~PLC_1~Card reader/writer_1",
       "Value": 51
     },
     {
-      "Name": "CPU~PLC_1~DP interface_1",
+      "Name": "CenterStation~PLC_1~DP interface_1",
       "Value": 60
     },
     {
-      "Name": "CPU~PLC_1~OPC UA_1",
+      "Name": "CenterStation~PLC_1~OPC UA_1",
       "Value": 117
     },
     {
-      "Name": "CPU~PLC_1~PROFINET_interface_1",
+      "Name": "CenterStation~PLC_1~PROFINET_interface_1",
       "Value": 64
     },
     {
-      "Name": "CPU~PLC_1~PROFINET_interface_1~Port_1",
+      "Name": "CenterStation~PLC_1~PROFINET_interface_1~Port_1",
       "Value": 65
     },
     {
-      "Name": "CPU~PLC_1~PROFINET_interface_1~Port_2",
+      "Name": "CenterStation~PLC_1~PROFINET_interface_1~Port_2",
       "Value": 66
     },
     {
-      "Name": "CPU~PLC_1~PROFINET_interface_2",
+      "Name": "CenterStation~PLC_1~PROFINET_interface_2",
       "Value": 72
     },
     {
-      "Name": "CPU~PLC_1~PROFINET_interface_2~Port_3",
+      "Name": "CenterStation~PLC_1~PROFINET_interface_2~Port_3",
       "Value": 73
     },
     {
-      "Name": "CPU~PLC_1~Virtual_communication_interface",
+      "Name": "CenterStation~PLC_1~Virtual_communication_interface",
       "Value": 135
     },
     {
-      "Name": "CPU~Rail_0",
-      "Value": 267
+      "Name": "CenterStation~Rail_0",
+      "Value": 279
     },
     {
-      "Name": "ET200SP",
-      "Value": 258
+      "Name": "ET200SP_1",
+      "Value": 270
     },
     {
-      "Name": "ET200SP~AI1~AI 4xI 2-wire 4..20mA HART V1.0",
+      "Name": "ET200SP_1~AI1~AI 4xI 2-wire 4..20mA HART V1.0",
+      "Value": 274
+    },
+    {
+      "Name": "ET200SP_1~DI1~DI 8x24VDC HS V1.0",
+      "Value": 277
+    },
+    {
+      "Name": "ET200SP_1~DQ1~DQ 8x24VDC/0.5A HF V2.0",
+      "Value": 276
+    },
+    {
+      "Name": "ET200SP_1~Rack",
+      "Value": 273
+    },
+    {
+      "Name": "ET200SP_1~ServerModule~Server module V1.1 (0 bytes)",
+      "Value": 275
+    },
+    {
+      "Name": "ET200SP_1~et200sp_1_interface",
+      "Value": 272
+    },
+    {
+      "Name": "ET200SP_1~et200sp_1_interface~IM 155-6 PN BA V3.2",
+      "Value": 278
+    },
+    {
+      "Name": "ET200SP_1~et200sp_1_interface~PROFINET_interface_1",
       "Value": 268
     },
     {
-      "Name": "ET200SP~DI1~DI 8x24VDC HS V1.0",
-      "Value": 265
+      "Name": "ET200SP_1~et200sp_1_interface~PROFINET_interface_1~Port1",
+      "Value": 269
     },
     {
-      "Name": "ET200SP~DQ1~DQ 8x24VDC/0.5A HF V2.0",
-      "Value": 264
+      "Name": "ET200SP_1~et200sp_1_interface~PROFINET_interface_1~Port2",
+      "Value": 271
     },
     {
-      "Name": "ET200SP~InterfaceModule",
-      "Value": 262
+      "Name": "ET200SP_2",
+      "Value": 258
     },
     {
-      "Name": "ET200SP~InterfaceModule~IM 155-6 PN BA V3.2",
+      "Name": "ET200SP_2~AI1~AI 4xI 2-/4-wire ST V2.0 , QI",
       "Value": 266
     },
     {
-      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1",
-      "Value": 257
+      "Name": "ET200SP_2~AI2~AI 4xI 2-/4-wire ST V2.0 , QI",
+      "Value": 265
     },
     {
-      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1~Port1",
-      "Value": 259
+      "Name": "ET200SP_2~AI3~AI 4xI 2-/4-wire ST V2.0 , QI",
+      "Value": 264
     },
     {
-      "Name": "ET200SP~InterfaceModule~PROFINET_interface_1~Port2",
-      "Value": 260
-    },
-    {
-      "Name": "ET200SP~Rack",
+      "Name": "ET200SP_2~Rack",
       "Value": 261
     },
     {
-      "Name": "ET200SP~ServerModule~Server module V1.1 (0 bytes)",
+      "Name": "ET200SP_2~ServerModule~Server module V1.1 (0 bytes)",
       "Value": 263
+    },
+    {
+      "Name": "ET200SP_2~et200sp_2_interface",
+      "Value": 262
+    },
+    {
+      "Name": "ET200SP_2~et200sp_2_interface~IM 155-6 PN HF V3.3",
+      "Value": 267
+    },
+    {
+      "Name": "ET200SP_2~et200sp_2_interface~PN-IO",
+      "Value": 257
+    },
+    {
+      "Name": "ET200SP_2~et200sp_2_interface~Port_1",
+      "Value": 259
+    },
+    {
+      "Name": "ET200SP_2~et200sp_2_interface~Port_2",
+      "Value": 260
     },
     {
       "Name": "IoSystem",

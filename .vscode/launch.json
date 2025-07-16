@@ -6,6 +6,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug live on plcsim",
+            "type": "plc-debug",
+            "request": "launch",
+            "program": "${workspaceFolder}",
+            "ip": "192.168.30.3",
+            "certificate": "${workspaceFolder}/.ax/certificates/reference_x509.crt",
+            "username": "User1",
+            "password": "Siemens@123"
+        },
+        {
             "name": "Debug live via office",
             "type": "plc-debug",
             "request": "launch",
@@ -26,8 +36,7 @@
             "certificate": "${workspaceFolder}/.ax/certificates/reference_x509.crt",
             "username": "User1",
             "password": "Siemens@123",
-            "plcId": "ab394e41-0e0b-4904-94fe-bb714dd29901"
-            
+            "plcId": "ab394e41-0e0b-4904-94fe-bb714dd29901"         
         }
     ]
 }
