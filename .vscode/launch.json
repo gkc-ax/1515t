@@ -24,7 +24,7 @@
             "certificate": "${workspaceFolder}/.ax/certificates/reference_x509.crt",
             "username": "User1",
             "password": "Siemens@123",
-            "plcId": "cfa5c29c-024b-4d1e-91e4-6c313a308bf7"
+            "plcId": "08afd418-be31-43de-ad66-7fce74eec606"
             
         },
         {

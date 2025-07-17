@@ -55,7 +55,6 @@ variables:
   # The password for the default user in the myPLC.hwl.yml file. A password should not be in the code as a readable variable. This is only the case here as it is a simple example.
   USER_PASSWORD: "Siemens@123"
   COMPARE_MODE: "all" # minimal  delta  all
-  CONNECTION: "-t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE"
 
 # Apax scripts
 scripts:
@@ -104,7 +103,7 @@ scripts:
     - apax hwc_create_user
   hw_diag_list:  hw-diag list -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
   hw_diag_compare:  hw-diag compare -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
-  hw_diag_buff: diag-buff -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE  -c
+  hw_diag_buff: diag-buff -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE  -s $SW_BIN_FOLDER  -c
   plc_info: plc-info inspect -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
   stop: plc-info set-mode stop -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
   run: plc-info set-mode run -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
