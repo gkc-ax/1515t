@@ -9,16 +9,16 @@ targets:
   - "1500"
   - llvm
 # Dependencies
+catalogs:
+  "@ax/simatic-ax": ^2504.0.0
 devDependencies:
-  "@ax/sdk": ^2504
-  "@ax/dcp-utility": ^1.2.0
-  # "@ax/plc-control": ^1.3.1s
-  # "@ax/diag": ^1.1.2
+  "@ax/sdk": 2504.0.0
+  "@ax/dcp-utility": 1.2.0
   "@ax-vscode/siemens.tracing-vscode": ^2.0.0
   "@ax/st-ls": 10.0.85
   "@ax/st-lang-contrib-library-toolbox": ^0.21.1
   "@ax-vscode/ax.vscode-coverage-highlighter": ^1.1.890
-  "@ax/hardware-diagnostics": ^0.3.0
+  "@ax/hardware-diagnostics": 0.3.0
 
 # Project variables
 variables:
@@ -101,21 +101,18 @@ scripts:
     - apax hwc_import_web_certificate
     - apax hwc_import_OPC_certificate
     - apax hwc_create_user
-  hw_diag_list:  hw-diag list -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
-  hw_diag_compare:  hw-diag compare -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
+  hw_diag_list: hw-diag list -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
+  hw_diag_compare: hw-diag compare -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
   hw_diag_buff: diag-buff -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE  -s $SW_BIN_FOLDER  -c
   plc_info: plc-info inspect -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
   stop: plc-info set-mode stop -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
-  run: plc-info set-mode run -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE 
-  reset : plc-info memory-reset -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
+  start: plc-info set-mode run -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE --no-input
+  reset: plc-info memory-reset -t $IP_ADDRESS --username $USER_NAME --password $USER_PASSWORD -C $TLS_CONNECT_CERTFILE
   # install gsd file
   install_gsd: hwc install-gsd -i $GSD_FOLDER
 dependencies:
-  "@ax/simatic-1500-clocks": ^10.0.6
-  "@ax/simatic-1500-tasks": ^10.0.1
-  "@ax/system-fastmath": ^10.0.24
-  "@ax/system": ^10.0.24
   "@gkc-ax/lib1": ^0.0.12
+  "@ax/simatic-1500-communication": 10.0.0
 
 registries:
   "@gkc-ax": https://npm.pkg.github.com/

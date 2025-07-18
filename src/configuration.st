@@ -11,8 +11,8 @@ CONFIGURATION MyConfiguration
         {OpcUa.AccessLevel = ReadOnly}
         ET200SP_DQ1_OutputAddress AT %QB2: BYTE;
         sinData,cosData : REAL;
-        AI1_CH0 AT %IW1: WORD;
-        AI1_CH1 AT %IW3: WORD;        
+        AI1_CH0 AT %IW28: WORD;
+        AI1_CH1 AT %IW30: WORD;        
         count: LREAL:= 0.0;
         temperature: REAL;
     END_VAR
